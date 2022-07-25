@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(43, 97, 97);
+}
+
+a {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #3D155F;
+}
+
+input {
+    font-size: 1.5rem;
+    color: #3D155F;
+}
+
+textarea {
+    font-size: 1.25rem;
+    color: #3D155F;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.category {
+    margin: 0rem 1rem;
+    background: pink;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 1rem
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-list,
+.action-list,
+.form-list {
+    text-align: center;
+}
+
+.category,
+.action,
+.category-list,
+.action-list {
+    height: fit-content;
+}
+
+.action {
+    margin: 1rem;
+    background: pink;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 1rem
+}
+
+.action-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    padding: 1rem 0;
+    background: pink;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input,
+select {
+    height: 2rem;
+}
+
+input,
+select,
+textarea {
+    margin: 0.75rem;
+    width: 70%;
+    border: 1px solid pink;
+    border-radius: 1rem;
+    padding: 0rem 1rem;
+}
+
+button {
+    margin-top: 1rem;
+    width: 20rem;
+    height: 2rem;
+    color: black;
+    background-color: blanchedalmond;
+    border: 0.25px solid green;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+select {
+    width: 75%;
+    color: #3D155F;
+    background: white;
+}

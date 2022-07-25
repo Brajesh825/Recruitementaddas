@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Asap Condensed">@import url(https://fonts.googleapis.com/css2?family=Asap+Condensed%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&amp;display=swap);</style>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, -27.023718, 94.037664)">
+    <g transform="matrix(1, 0, 0, 1, -0.401963, -145.383224)">
+      <ellipse style="fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" cx="259.068" cy="205.951" rx="14.059" ry="14.059"/>
+      <g>
+        <ellipse style="fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" cx="259.106" cy="199.493" rx="4.396" ry="4.396"/>
+        <path style="paint-order: fill; fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" d="M 250.908 212.895 C 250.9 201.195 267.317 201.128 267.325 212.828"/>
+        <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="250.41" y1="213.391" x2="267.833" y2="213.321"/>
+      </g>
+      <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="263.508" y1="219.762" x2="264.83" y2="223.985"/>
+      <g>
+        <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="261.144" y1="225.761" x2="268.648" y2="223.233"/>
+        <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="261.773" y1="226.007" x2="265.962" y2="238.524"/>
+        <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="268.325" y1="223.855" x2="272.514" y2="236.372"/>
+        <path style="fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" d="M 265.941 238.48 C 267.589 243.302 274.109 241.837 272.485 236.296"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -0.401963, -145.383224)">
+      <ellipse style="fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" cx="244.084" cy="220.394" rx="4.769" ry="4.769"/>
+      <g>
+        <line style="fill: rgb(216, 216, 216); stroke-linecap: round; stroke: rgb(218, 91, 89);" x1="239.222" y1="226.604" x2="248.853" y2="226.604"/>
+        <line style="fill: rgb(216, 216, 216); stroke-linecap: round; stroke: rgb(218, 91, 89);" x1="236.597" y1="229.572" x2="236.587" y2="243.347"/>
+        <line style="fill: rgb(216, 216, 216); stroke-linecap: round; stroke: rgb(218, 91, 89);" x1="250.908" y1="229.572" x2="250.898" y2="243.347"/>
+        <polyline style="fill: rgba(216, 216, 216, 0); fill-rule: nonzero; paint-order: fill; stroke-linejoin: round; stroke-linecap: round; stroke: rgb(218, 91, 89);" points="239.315 236.781 239.315 253.375 243.964 253.347 243.877 243.347 243.914 253.341 248.17 253.35 248.077 236.618"/>
+        <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="236.587" y1="243.347" x2="239.315" y2="243.347"/>
+        <line style="fill: rgb(216, 216, 216); stroke: rgb(218, 91, 89);" x1="248.17" y1="243.347" x2="250.898" y2="243.347"/>
+        <path style="fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" d="M 248.853 226.604 C 250.908 226.604 250.898 227.989 250.908 229.572"/>
+        <path style="fill: rgba(216, 216, 216, 0); stroke: rgb(218, 91, 89);" d="M 236.587 229.572 C 239.222 229.572 239.209 228.187 239.222 226.604" transform="matrix(-1, 0, 0, -1, 475.809006, 456.17601)"/>
+      </g>
+    </g>
+    <g transform="matrix(1.398702, 0, 0, 1.398702, -118.616348, -246.404343)" style="">
+      <g style="">
+      <ellipse style="fill: rgba(216, 216, 216, 0); stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" cx="244.084" cy="220.394" rx="4.769" ry="4.769"/>
+        <line style="fill: rgb(216, 216, 216); stroke-linecap: round; stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" x1="239.222" y1="226.604" x2="248.853" y2="226.604"/>
+        <line style="fill: rgb(216, 216, 216); stroke-linecap: round; stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" x1="236.597" y1="229.572" x2="236.587" y2="243.347"/>
+        <line style="fill: rgb(216, 216, 216); stroke-linecap: round; stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" x1="250.908" y1="229.572" x2="250.898" y2="243.347"/>
+        <polyline style="fill: rgba(216, 216, 216, 0); fill-rule: nonzero; paint-order: fill; stroke-linejoin: round; stroke-linecap: round; stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" points="239.315 236.781 239.315 253.375 243.964 253.347 243.877 243.347 243.914 253.341 248.17 253.35 248.077 236.618"/>
+        <line style="fill: rgb(216, 216, 216); stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" x1="236.587" y1="243.347" x2="239.315" y2="243.347"/>
+        <line style="fill: rgb(216, 216, 216); stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" x1="248.17" y1="243.347" x2="250.898" y2="243.347"/>
+        <path style="fill: rgba(216, 216, 216, 0); stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" d="M 248.853 226.604 C 250.908 226.604 250.898 227.989 250.908 229.572"/>
+        <path style="fill: rgba(216, 216, 216, 0); stroke-width: 0.714949px; stroke: rgb(218, 91, 89);" d="M 236.587 229.572 C 239.222 229.572 239.209 228.187 239.222 226.604" transform="matrix(-1, 0, 0, -1, 475.809006, 456.17601)"/>
+        <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 23.5933px; font-weight: 700; letter-spacing: -0.1px; white-space: pre;" x="128.231" y="275.638">RECRUITMENT ADDAS</text>
+        <text style="fill: rgb(51, 51, 51); font-family: &quot;Asap Condensed&quot;; font-size: 10.2px; letter-spacing: 10.2px; word-spacing: 1px; white-space: pre;" x="129.506" y="288.666">let's grow together</text>
+      </g>
+    </g>
+  </g>
+</svg>

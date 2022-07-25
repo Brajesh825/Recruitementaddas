@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main {
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+    }
+    
+    @media screen and (max-width: 992px) {
+        .main {
+            grid-template-columns: 2fr 3fr;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .main {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .left {
+        background: url('./assets/image/mountainpc.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .left {
+            background: url('./assets/image/mountains.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: auto;
+        }
+    }
+    
+    .profile-card {
+        padding: 1rem;
+    }
+    
+    .profile-card h2,
+    h3,
+    h4 {
+        padding: 0.125rem;
+    }
+    
+    .profile-card h2 {
+        font-weight: 500;
+        color: azure;
+    }
+    
+    .profile-card h3 {
+        font-weight: 200;
+        color: rgb(91, 235, 235);
+    }
+    
+    .profile-card h4 {
+        font-weight: 100;
+        color: antiquewhite;
+    }
+    
+    .right {
+        background: rgb(255, 255, 255);
+        height: 100vh;
+        overflow: auto;
+    }
+    
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .right {
+            height: auto;
+            overflow: none;
+        }
+    }
+    
+    .course {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem 2.5rem;
+    }
+    
+    .course-left {
+        background-color: rgb(154, 97, 192);
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        border-radius: 1rem 0 0 1rem;
+    }
+    
+    .course-left h4 {
+        color: aqua;
+        padding: 0.25rem;
+    }
+    
+    .course-right {
+        background-color: rgb(242, 242, 243);
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        border-radius: 0 1rem 1rem 0;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .course {
+            flex-direction: column;
+        }
+        .course-left,
+        .course-right {
+            width: auto;
+        }
+        .course-left {
+            border-radius: 1rem 1rem 0 0;
+        }
+        .course-right {
+            border-radius: 0 0 1rem 1rem;
+        }
+    }
+    
+    .course-right a {
+        text-decoration: none;
+        color: rgb(19, 2, 2);
+        padding: 0.25rem 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .course-right a:hover {
+        color: rgb(78, 37, 155);
+    }
+    
+    .course-element {
+        background: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+    
+    .bar {
+        display: block;
+        width: 40%;
+        height: 1px;
+        border-radius: 3px;
+        padding: 0.125rem;
+        margin: 0.125rem;
+        background-color: rgb(5, 5, 41);
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="profile-card">
+                <h4>Welcome to</h4>
+                <h2>The Recruitmentaddas Program </h2>
+                <h3>brajeshmishra825@gmail.com</h3>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+</body>
+
+</html>
+
+<script>
+    async function poupulate(courseId) {
+
+        let response = await fetch("/video/?courseId=" + courseId)
+        response = await response.json()
+        const course = response.videos
+        course.sort(function(a, b) {
+            return a.videoNumber > b.videoNumber;
+        });
+
+
+        let sections = await fetch("/section/details/" + courseId);
+        sections = await sections.json();
+        sections = sections.course;
+        sections.forEach((element) => {
+            const sectionName = element.sectionName
+            const sectionId = element._id
+            const sectionNumber = element.sectionNumber
+            const rightEle = document.querySelector('.right')
+
+            var results = [];
+            course.forEach((element) => {
+                if (element.sectionId == sectionId)
+                    results.push(element)
+            })
+            let links = ""
+            results.forEach((element) => {
+                links += `<div class="course-element"><a href="/course/${element.courseId}/${element.sectionId}/${element.videoNumber}">${element.videoTitle}</a>
+                        <span>&#10004;</span></div>`
+            })
+
+            rightEle.innerHTML += `<div class="course"> <div class="course-left">
+                    <h4>${sectionNumber} ${sectionName}</h4>
+                    <h4></h4>
+                    <span class="bar"></span>
+                </div>
+                <div class="course-right">
+                    
+                        ${links}          
+                    </div>
+                </div>
+                </div>`
+
+        })
+
+
+
+
+    }
+    poupulate("6295df168d5adf3bafeaf317")
+</script>

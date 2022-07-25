@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/admin-panel.css">
+</head>
+
+<body>
+    <section class="main">
+        <section class="category">
+            <div class="category-list">
+                <a href="#" id="course_category">Course</a>
+                <a href="#" id="section_category">Section</a>
+                <a href="#" id="user_category">User</a>
+                <a href="#" id="video_category">Video</a>
+            </div>
+        </section>
+        <section class="action hidden">
+            <div class="hidden action-list " id="course_action">
+                <a href="#" id="add_course_action">Add Course</a>
+                <a href="#" id="update_course_action">Update Course </a>
+                <a href="#" id="delete_course_action">Delete Course</a>
+            </div>
+            <div class="hidden action-list " id="section_action">
+                <a href="#" id="add_section_action">Add Section</a>
+                <a href="#" id="update_section_action">Update Section</a>
+                <a href="#" id="delete_section_action">Remove Section</a>
+            </div>
+            <div class="hidden action-list " id="user_action">
+                <a href="#" id="add_user_action">Add User</a>
+            </div>
+            <div class="hidden action-list " id="video_action">
+                <a href="#" id="add_video_action">Add Video</a>
+            </div>
+        </section>
+        <section class="form hidden ">
+            <form id="add_course_form" action="/course" class="hidden">
+                <input type="text" name="courseName" placeholder="Enter the course Name">
+                <textarea name="courseDetails" rows="5" placeholder="Enter the course Details"></textarea>
+                <button type="submit">Add</button>
+            </form>
+            <form id="update_course_form" action="/course/update" class="hidden">
+                <select name="courseId" id="" class="courseList">
+                    </select>
+                <input type="text" name="courseName" placeholder="Enter the course Name">
+                <textarea name="courseDetails" rows="5" placeholder="Enter the course Details"></textarea>
+                <button type="submit">Update</button>
+            </form>
+            <form id="delete_course_form" action="/course/delete" class="hidden">
+                <select name="courseId" id="" class="courseList"></select>
+                <button type="submit">Delete</button>
+            </form>
+            <form id="add_section_form" action="/section" class="hidden">
+                <select name="courseId" class="courseList"></select>
+                <input type="text" name="sectionName" placeholder="Enter the section name">
+                <input type="text" name="sectionNumber" placeholder="Enter the section number">
+                <input type="text" name="sectionDetails" placeholder="Enter the section details">
+                <button type="submit">Add</button>
+            </form>
+            <form id="update_section_form" action="/section/update" class="hidden">
+                <select name="courseId" id="update_section_course" class="courseList">
+                            </select>
+                <select name="sectionId" id="update_section_section" class="">
+                            </select>
+                <input type="text" name="sectionName" id="courseName" placeholder="Enter the course Name">
+                <input type="text" name="sectionDetails" id="courseDetails" placeholder="Enter the course Details">
+                <button type="submit">Update</button>
+            </form>
+            <form id="delete_section_form" action="/section/delete" class="hidden">
+                <select name="courseId" id="" class="courseList"></select>
+                <button type="submit">Delete</button>
+            </form>
+            <form id="add_user_form" action="/user/subscribe" class="hidden">
+                <input type="email" name="email" placeholder="Enter your email">
+                <button type="submit">Add</button>
+            </form>
+            <form id="add_video_form" action="/video/add" class="hidden">
+                <select name="courseId" id="add_video_course" class="courseList">
+                </select>
+                <select name="sectionId" id="add_video_section"></select>
+                <input type="text" name="videoTitle" placeholder="Video title">
+                <input type="number" name="videoNumber" placeholder="Video number">
+                <input name="src" placeholder="enter src">
+                <input name="h" placeholder="enter h">
+                <button type="submit">Add</button>
+            </form>
+        </section>
+    </section>
+</body>
+
+</html>
+<script>
+    // Get Course Details
+    const getCourseDetails = async() => {
+            console.log("get course Details started");
+            let response = await fetch('/course/all')
+            let data = await response.json();
+            console.log(data);
+            return data;
+        }
+        // Inserting course details in dropdowns
+    const insertIntoDropDown = async() => {
+            let courseDetails = await getCourseDetails()
+            let courselist = courseDetails.course;
+            const courseList = document.querySelectorAll('.courseList')
+            courseList.forEach((courseElement) => {
+                courseElement.innerHTML = ""
+                courselist.forEach((course) => {
+                    courseElement.innerHTML += `<option value=${course._id}>${course.courseName}</option>`
+                })
+            })
+        }
+        // Sending form
+    async function sendFormFieldsAsJson({
+        url,
+        formData,
+        method
+    }) {
+        let formDataObject = Object.fromEntries(formData.entries());
+        let formDataJsonString = JSON.stringify(formDataObject);
+        let fetchOptions = {
+            method: method,
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: formDataJsonString,
+        };
+        let res = await fetch(url, fetchOptions);
+        if (!res.ok) {
+            let error = await res.text();
+            throw new Error(error);
+        }
+        return res.json();
+    }
+    insertIntoDropDown()
+        // Handling view
+        // category selector
+    const course_category = document.getElementById('course_category')
+    const section_category = document.getElementById('section_category')
+    const video_category = document.getElementById('video_category')
+    const user_category = document.getElementById('user_category')
+
+    // action selector
+    const course_action = document.getElementById('course_action')
+    const section_action = document.getElementById('section_action')
+    const video_action = document.getElementById('video_action')
+    const user_action = document.getElementById('user_action')
+
+    //  form selector
+    const add_course_action = document.getElementById('add_course_action');
+    const update_course_action = document.getElementById('update_course_action')
+    const delete_course_action = document.getElementById('delete_course_action')
+    const add_section_action = document.getElementById('add_section_action');
+    const update_section_action = document.getElementById('update_section_action')
+    const delete_section_action = document.getElementById('delete_section_action')
+    const add_user_action = document.getElementById('add_user_action')
+    const add_video_action = document.getElementById('add_video_action')
+
+    // form selector
+    const add_course_form = document.getElementById('add_course_form');
+    const update_course_form = document.getElementById('update_course_form')
+    const delete_course_form = document.getElementById('delete_course_form')
+    const add_section_form = document.getElementById('add_section_form');
+    const update_section_form = document.getElementById('update_section_form')
+    const delete_section_form = document.getElementById('delete_section_form')
+    const add_user_form = document.getElementById('add_user_form')
+    const add_video_form = document.getElementById('add_video_form')
+
+    // removeAllForns
+    function removeAllForm() {
+        add_course_form.classList.add('hidden')
+        delete_course_form.classList.add('hidden')
+        update_course_form.classList.add('hidden')
+        add_section_form.classList.add('hidden')
+        delete_section_form.classList.add('hidden')
+        update_section_form.classList.add('hidden')
+        add_user_form.classList.add('hidden')
+        add_video_form.classList.add('hidden')
+    }
+
+    // handling course
+    course_category.addEventListener("click", () => {
+        course_action.parentElement.classList.remove('hidden')
+        let siblings = course_action.parentElement.children;
+        for (let sib of siblings) {
+            sib.classList.add('hidden')
+        }
+        add_course_form.parentElement.classList.add('hidden')
+        let forms = add_course_form.parentElement.children
+        for (let sib of forms) {
+            sib.classList.add('hidden')
+        }
+        course_action.classList.remove('hidden')
+    })
+    add_course_action.addEventListener("click", () => {
+        removeAllForm()
+        add_course_form.parentElement.classList.remove('hidden')
+        add_course_form.classList.remove('hidden')
+    })
+    delete_course_action.addEventListener("click", (req, res) => {
+        removeAllForm()
+        add_course_form.parentElement.classList.remove('hidden')
+        delete_course_form.classList.remove('hidden')
+    })
+    update_course_action.addEventListener("click", (req, res) => {
+        removeAllForm()
+        add_course_form.parentElement.classList.remove('hidden')
+        update_course_form.classList.remove('hidden')
+    })
+
+    // handling section
+    section_category.addEventListener("click", () => {
+        section_action.parentElement.classList.remove('hidden')
+        let elem = section_action
+        let siblings = elem.parentElement.children;
+        for (let sib of siblings) {
+            sib.classList.add('hidden')
+        }
+        add_course_form.parentElement.classList.add('hidden')
+        let forms = add_course_form.parentElement.children
+        for (let sib of forms) {
+            sib.classList.add('hidden')
+        }
+        section_action.classList.remove('hidden')
+    })
+    add_section_action.addEventListener("click", () => {
+        removeAllForm()
+        add_section_form.parentElement.classList.remove('hidden')
+        add_section_form.classList.remove('hidden')
+    })
+    delete_section_action.addEventListener("click", (req, res) => {
+        removeAllForm()
+        delete_section_form.parentElement.classList.remove('hidden')
+        delete_section_form.classList.remove('hidden')
+    })
+    update_section_action.addEventListener("click", (req, res) => {
+        removeAllForm()
+        update_section_form.parentElement.classList.remove('hidden')
+        update_section_form.classList.remove('hidden')
+    })
+
+    // hadnling user
+    user_category.addEventListener("click", () => {
+        user_action.parentElement.classList.remove('hidden')
+        let elem = user_action
+        let siblings = elem.parentElement.children;
+        for (let sib of siblings) {
+            sib.classList.add('hidden')
+        }
+        add_user_form.parentElement.classList.add('hidden')
+        let forms = add_user_form.parentElement.children
+        for (let sib of forms) {
+            sib.classList.add('hidden')
+        }
+        user_action.classList.remove('hidden')
+    })
+    add_user_action.addEventListener("click", () => {
+        removeAllForm()
+        add_user_form.parentElement.classList.remove('hidden')
+        add_user_form.classList.remove('hidden')
+    })
+
+    // handling video
+    video_category.addEventListener("click", () => {
+        video_action.parentElement.classList.remove('hidden')
+        let elem = video_action
+        let siblings = elem.parentElement.children;
+        for (let sib of siblings) {
+            sib.classList.add('hidden')
+        }
+        add_video_form.parentElement.classList.add('hidden')
+        let forms = add_video_form.parentElement.children
+        for (let sib of forms) {
+            sib.classList.add('hidden')
+        }
+        video_action.classList.remove('hidden')
+    })
+
+    add_video_action.addEventListener("click", () => {
+        removeAllForm()
+        add_video_form.parentElement.classList.remove('hidden')
+        add_video_form.classList.remove('hidden')
+    })
+
+    // Setting section while using course 
+    document.getElementById('add_video_course').addEventListener('click', async(e) => {
+        const courseId = e.currentTarget.value
+        const url = "/section/details/" + courseId
+        let response = await fetch(url)
+        let section = await response.json()
+        let sectionlist = section.course;
+        const sectionDropdown = document.getElementById('add_video_section')
+        sectionDropdown.innerHTML = ""
+        sectionlist.forEach((sectionElement) => {
+            console.log(sectionElement);
+            sectionDropdown.innerHTML += `<option value=${sectionElement._id}>${sectionElement.sectionName}</option>`
+        })
+
+    })
+
+    // Add Course
+    add_course_form.addEventListener("submit", async(e) => {
+        e.preventDefault();
+        let form = e.currentTarget;
+        let url = form.action;
+        let method = "POST";
+        try {
+            let formData = new FormData(form);
+            let responseData = await sendFormFieldsAsJson({
+                url,
+                formData,
+                method
+            });
+            console.log(responseData);
+            if (responseData.status == true) {
+                insertIntoDropDown()
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+
+    // Update Course
+    update_course_form.addEventListener("submit", async(e) => {
+        e.preventDefault();
+        let form = e.currentTarget;
+        let url = form.action;
+        let method = "PATCH"
+        try {
+            let formData = new FormData(form);
+            let responseData = await sendFormFieldsAsJson({
+                url,
+                formData,
+                method
+            });
+            if (responseData.status == true) {
+                insertIntoDropDown()
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+
+    // Delete Course
+    delete_course_form.addEventListener("submit", async(e) => {
+        e.preventDefault();
+        let form = e.currentTarget;
+        let url = form.action;
+        let method = "delete"
+        try {
+            let formData = new FormData(form);
+            let responseData = await sendFormFieldsAsJson({
+                url,
+                formData,
+                method
+            });
+            console.log(responseData);
+            if (responseData.status == true) {
+                await insertIntoDropDown()
+                console.log("done");
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+
+    // Add Section
+    add_section_form.addEventListener("submit", async(e) => {
+        e.preventDefault();
+        let form = e.currentTarget;
+        let url = form.action;
+        let method = "POST";
+        try {
+            let formData = new FormData(form);
+            let responseData = await sendFormFieldsAsJson({
+                url,
+                formData,
+                method
+            });
+            console.log(responseData);
+            if (responseData.status == true) {
+                insertIntoDropDown()
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+
+    add_video_form.addEventListener("submit", async(e) => {
+        e.preventDefault();
+        let form = e.currentTarget;
+        let url = form.action;
+        let method = "POST";
+        try {
+            let formData = new FormData(form);
+            let responseData = await sendFormFieldsAsJson({
+                url,
+                formData,
+                method
+            });
+            console.log(responseData);
+            if (responseData.status == true) {
+                insertIntoDropDown()
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+</script>
