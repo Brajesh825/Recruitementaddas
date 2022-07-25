@@ -11,5 +11,25 @@
     "mongoose": "^6.3.4",
     "nodemon": "^2.0.16",
     "validator": "^13.7.0"
-  }
+  },
+  "name": "recruitementaddas",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start" : "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brajesh825/Recruitementaddas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brajesh825/Recruitementaddas/issues"
+  },
+  "homepage": "https://github.com/Brajesh825/Recruitementaddas#readme",
+  "description": ""
 }
