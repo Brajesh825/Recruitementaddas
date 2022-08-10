@@ -403,6 +403,7 @@ nav {
   align-items: center;
   position: relative;
   top: -5vh;
+  background-color: rgb(33, 25, 25);
 }
 
 .section1 .card {
@@ -443,6 +444,7 @@ nav {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  background-color: rgb(242, 232, 232);
 }
 .section2 section {
   flex: 1;
@@ -504,6 +506,8 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: row;
+  background-color: rgb(221, 207, 207);
+
 }
 
 .section3 section {
