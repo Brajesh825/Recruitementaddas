@@ -585,7 +585,7 @@ nav {
   align-items: top;
 }
 
-.section4 section .card {
+.section4 section .scard {
   width: 100%;
   background-color: transparent;
   padding: 2rem;
@@ -597,13 +597,13 @@ nav {
   background-color: var(--dark);
 }
 
-.section4 section .card:hover {
+.section4 section .scard:hover {
   -webkit-box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.3);
   -moz-box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.3);
   box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.3);
 }
 
-.section4 section .card .title {
+.section4 section .scard .title {
   font-size: 1.2em;
 }
 
@@ -615,7 +615,7 @@ nav {
     padding: 0rem 1rem;
     flex-wrap: wrap;
   }
-  .section4 section .card {
+  .section4 section .scard {
     margin: 10px 0;
   }
 }
