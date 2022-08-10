@@ -493,7 +493,7 @@ nav {
 
 @media (max-width: 600px) {
     .section2 section img {
-      width: 70%;
+      width: 100%;
     }
   }
 
@@ -553,7 +553,7 @@ nav {
 
 @media (max-width: 600px) {
     .section3 section img {
-      width: 70%;
+      width: 100%;
     }
   }
 
