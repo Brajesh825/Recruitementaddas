@@ -470,6 +470,13 @@ nav {
   font-size: 2em;
 }
 
+.section2 ol {
+  font-family: var(--primaryfont);
+  line-height: 1.4em;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
 @media (max-width: 1080px) {
   .section2 section .title {
     font-size: 1.4em;
@@ -486,9 +493,6 @@ nav {
   }
   .section2 section img {
     width: 60%;
-  }
-  .section2 section em {
-    top: 10px;
   }
 }
 
@@ -544,9 +548,7 @@ nav {
   .section3 section img {
     width: 80%;
   }
-  .section3 section em {
-    top: 10px;
-  }
+
   .image__container{
     padding: 0;
   }
@@ -559,6 +561,12 @@ nav {
     }
   }
 
+  .section3 ol {
+    font-family: var(--primaryfont);
+    line-height: 1.4em;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+  }
 
 /*SECTION4*/
 
