@@ -77,10 +77,21 @@ ul {
   left: -20px;
 }
 
-p {
+p ,li {
   line-height: 1.4em;
   letter-spacing: 0.08em;
   color: var(--gray);
+  word-wrap: break-word;
+}
+
+@media (max-width: 420px) {
+  p ,li {
+    line-height: 1.2em;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    color: var(--gray);
+    word-wrap: break-word;
+  }
 }
 
 fieldset {
