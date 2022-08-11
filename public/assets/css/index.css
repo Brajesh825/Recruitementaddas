@@ -88,7 +88,8 @@ p ,li {
   p ,li {
     line-height: 1.2em;
     letter-spacing: 0.08em;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    max-width: 90%;
     color: var(--gray);
     word-wrap: break-word;
   }
@@ -203,6 +204,9 @@ em {
   @media (max-width: 420px) {
     .title_header .title:after {
       bottom: 0px;
+    }
+    .sub-title {
+      font-size: 0.9em;
     }
   }
 }
@@ -533,6 +537,7 @@ nav {
 
 .section3 section em {
   position: relative;
+  font-size: 1.75rem;
 }
 
 .section3 section .title {
