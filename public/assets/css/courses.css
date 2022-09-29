@@ -1,0 +1,134 @@
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.05rem;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(rgb(194, 201, 216), rgb(98, 133, 207));
+}
+
+.c-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80%;
+  min-height: 550px;
+  min-width: 300px;
+}
+
+.carousel-container {
+  display: flex;
+  /* align-items: center; */
+  min-height: 400px;
+  max-width: 1380px;
+  min-width: 460px;
+  min-width: 350px;
+  background-color: #292b2c;
+  box-shadow: inset 0px 0px 35px black;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  /*464 pc view   */
+  min-width: 25rem; 
+  margin: 1rem 2rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 0px 25px black;
+  transition: transform 0.2s;
+}
+
+@media (max-width: 630px) {
+  .card {
+    /* 380 mobile view */
+    min-width: 20rem;
+  }
+}
+
+.card-img {
+  border-radius: 10px 10px 0px 0px;
+  background: rgb(58, 95, 111);
+  min-height: 140px;
+}
+
+.card-img img {
+  width: inherit;
+  border-radius: 1rem;
+}
+
+.card-title {
+  padding: 0px 0px 0px 20px;
+  margin-bottom: 0px;
+  background-color: #d5e3f0;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem 0rem 1.25rem ;
+  background-color: #000000;
+  color: white;
+}
+
+.card-price h5 {
+  margin-top: 8px;
+}
+
+.card-title h4 {
+  padding: 1rem;
+}
+
+.card-text {
+  padding: 10px 0px 0px 20px;
+}
+
+.card-btn {
+  border: none;
+  color: white;
+  text-align: center;
+  background-color: #0275d8;
+  border-radius: 8px;
+  margin: auto 20px 20px 20px;
+  padding: 15px;
+}
+
+.card-mover-btn {
+  position: absolute;
+}
+
+.btn {
+  font-size: 50px;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.424);
+  transition: background-color 0.05s;
+}
+
+.btn:hover {
+  background-color: rgba(101, 101, 101, 0.722);
+}
+
+.prev-cont {
+  margin-right: 87%;
+}
+
+.next-cont {
+  margin-left: 87%;
+}
+
+@media (max-width: 630px) {
+  .card:first-child {
+    margin-left: 25px;
+  }
+}
