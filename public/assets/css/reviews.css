@@ -31,15 +31,16 @@
     background: #FDFEFF;
     transition: background .6s ease;
     border-radius: 10px;
-    padding: 20px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
     box-shadow: 0 8px 40px rgba(#000000, .2);
+}
+
+.reviews{
+    background-color: white;
 }
 
 @media only screen and (max-width: 600px) {
 
-    .reviews{
-        margin-top: 5rem;
-    }
     h2{
         font-size: 1.5rem;
     }
@@ -56,7 +57,7 @@
     border: 1px solid gray;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 2.2em 0.5rem 0rem 0.5rem;
+    margin: 1.5rem 0.5rem 0rem 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
