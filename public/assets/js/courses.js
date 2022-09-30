@@ -46,49 +46,49 @@ const courses = [
     title: "A Complete Understanding of  Network Infrastructure-:",
     text: " In this course we have discussed all network infrastructue technologies ind details. We also have discussed about certification in this domain from CCNA,CCNP,ETC",
     cp: "Rs 399",
-    sp: "Rs 199"
+    sp: "Rs 199",
   },
   {
     image: "/assets/image/courses/8.jpeg",
     title: "A Complete Understanding of Engineering Profile--:",
     text: " In This course we have discussed all engineering job titles in details.This course will give you the depth knowledge on engineering Requirements from Mechanical engineer,electrical engineer,embedded engineer etc.",
     cp: "Rs 499",
-    sp: "Rs 199"
+    sp: "Rs 199",
   },
   {
     image: "/assets/image/courses/9.jpeg",
     title: "A Complete Understanding of SAP -:",
     text: " In This course we have discussed all SAP job titles in details.This course will give you the depth knowledge on Technical Module of SAP AND Functional Module of SAP.",
     cp: "Rs 799",
-    sp: "Rs 299"
+    sp: "Rs 299",
   },
   {
     image: "/assets/image/courses/10.jpeg",
     title: "How to Source Through x- Ray Search on Google:",
     text: " In this course we are going to discuss about Sourcing candidate Through X-RAY Search on google.",
     cp: "Rs 999",
-    sp: "Rs 499"
+    sp: "Rs 499",
   },
   {
     image: "/assets/image/courses/11.jpeg",
     title: "How to Negotiate The Salary from Candidate-:",
     text: " In This course we are going to discuss about How to negotiate salary from Candidate for different job roles.",
     cp: "Rs 199",
-    sp: "Rs 99"
+    sp: "Rs 99",
   },
   {
     image: "/assets/image/courses/12.jpeg",
     title: "How To Source Candidate Through Different Websites-:",
     text: " In This course we are going to discuss about sourcing through different Websites",
     cp: "Rs 499",
-    sp: "Rs 299"
+    sp: "Rs 299",
   },
   {
     image: "/assets/image/courses/13.jpeg",
     title: "How to Source Female Candidate",
     text: " In this course we are going to discuss about How to find Female Candidate for different job roles in United states.",
     cp: "Rs 799",
-    sp: "Rs 499"
+    sp: "Rs 499",
   },
 ];
 
